@@ -5,6 +5,9 @@ I am using a docker container with preinstalled dependencies to make my program 
 Build Image with below command:
     docker build -t jpmc-project .
 
+Run the Docker container using:
+    docker run -itd --rm --name jpmc-reports -v "$(pwd)":/usr/src/maven jpmc-project
+
 
 Then execute the Maven Build:
     mvn clean package -Dmaven.test.skip
