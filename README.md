@@ -9,12 +9,15 @@ Run the Docker container using:
     docker run -itd --rm --name jpmc-reports -v "$(pwd)":/usr/src/maven jpmc-project
 
 
+Get into the container using:
+    docker exec -it jpmc-reports bash
+
 Then execute the Maven Build:
     mvn clean package -Dmaven.test.skip
     
     
-And then after the build artifacts are generated, we can see the Selling and Buying report generated with a sample data year 2018 using:
-    java -jar target/report-engine.jar -IRR (Inward Ranked Report)
-    java -jar target/report-engine.jar -ISR (Inward trade report
-    java -jar target/report-engine.jar -ORR (Outward Ranked Report)
-    java -jar target/report-engine.jar -OSR (Outward trade Report)
+And then after the build artifacts are generated, we can see the Selling and Buying report generated with a sample data year 2018 using commands:
+    "java -jar target/report-engine.jar -IRR" (Inward Ranked Report)
+    "java -jar target/report-engine.jar -ISR" (Inward trade report
+    "java -jar target/report-engine.jar -ORR" (Outward Ranked Report)
+    "java -jar target/report-engine.jar -OSR" (Outward trade Report)
